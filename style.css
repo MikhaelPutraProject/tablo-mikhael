@@ -1,0 +1,53 @@
+/* File: style.css - FINAL VERSION */
+body {
+    background-color: #1a2c3e;
+    color: #f8f9fa; 
+    font-family: 'Roboto Mono', monospace; /* Font Kasir */
+    padding-bottom: 50px; 
+    font-size: 0.95rem; 
+}
+.container, .content .container {
+    background-color: #2c3e50;
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    padding: 30px;
+}
+.sidebar {
+    background-color: #001f3f !important; 
+}
+/* Tombol & Form */
+.btn-primary { background-color: #007bff; border-color: #007bff; }
+.btn-secondary { background-color: #4a627a; border-color: #4a627a; }
+.form-control { background-color: #34495e; color: #f8f9fa; border: 1px solid #4a627a; }
+.form-control:focus { background-color: #34495e; color: #f8f9fa; border-color: #007bff; box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25); }
+.form-control::placeholder { color: #ced4da !important; opacity: 1; }
+.form-control:-ms-input-placeholder { color: #ced4da !important; }
+.form-control::-moz-placeholder { color: #ced4da !important; opacity: 1; }
+.table { color: #f8f9fa; }
+.table thead th { background-color: #007bff; color: #ffffff; }
+.table tbody tr { background-color: #2c3e50; }
+.table-hover tbody tr:hover { background-color: #34495e; }
+.table td, .table th { border-top: 1px solid #34495e; }
+.search-bar-highlight {
+    background-color: rgba(0, 191, 255, 0.1); 
+    border: 1px solid #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); 
+}
+.search-bar-highlight .form-control { background-color: #34495e; color: #f8f9fa; border-color: #007bff; }
+.btn-info { background-color: #17a2b8; border-color: #17a2b8; color: #fff; font-weight: bold; }
+.btn-info:hover { background-color: #117a8b; border-color: #117a8b; }
+.app-footer {
+    background-color: #001f3f; 
+    color: #ced4da;
+    font-size: 0.85rem;
+    width: 100%;
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+}
+.app-footer .footer-content {
+    margin-left: 250px; 
+    padding: 8px 15px;
+    display: block;
+}

@@ -6,32 +6,55 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     exit;
 }
 
-include 'koneksi.php'; 
-include 'config.php'; 
+include 'config.php';
 
-$id = $_GET['id'] ?? null;
-$tableName = $_GET['table'] ?? null; 
+/* ===============================
+   Helper DELETE via api.php
+================================ */
+function apiDelete($endpoint)
+{
+    $url = "http://localhost/tablo/api.php" . $endpoint;
 
-if ($id && $tableName) {
-    if (!getTableFields($tableName)) { header("Location: data_tabel.php?table=produk&status=gagal_hapus_config_error"); exit(); }
-    
-    $sql = "DELETE FROM $tableName WHERE id = ?";
-    $stmt = $koneksi->prepare($sql);
-    
-    if ($stmt === false) { die("Gagal menyiapkan query DELETE: " . $koneksi->error); }
-    
-    $stmt->bind_param("i", $id); 
+    $context = stream_context_create([
+        "http" => [
+            "method" => "DELETE"
+        ]
+    ]);
 
-    if ($stmt->execute()) {
-        header("Location: data_tabel.php?table=$tableName&status=sukses_hapus");
-        exit();
-    } else {
-        die("Gagal menghapus data dari tabel $tableName: " . $stmt->error);
-    }
-    $stmt->close();
-} else {
-    header("Location: data_tabel.php?table=produk&status=gagal_hapus_id_kosong");
-    exit();
+    return @file_get_contents($url, false, $context);
 }
-$koneksi->close();
-?>
+
+/* ===============================
+   Ambil parameter
+================================ */
+$id        = $_GET['id'] ?? null;
+$tableName = $_GET['table'] ?? null;
+
+/* ===============================
+   Validasi
+================================ */
+if (!$id || !$tableName) {
+    header("Location: data_tabel.php?table=produk&status=gagal_hapus_id_kosong");
+    exit;
+}
+
+if (!getTableFields($tableName)) {
+    header("Location: data_tabel.php?table=produk&status=gagal_hapus_config_error");
+    exit;
+}
+
+/* ===============================
+   DELETE ke API
+================================ */
+$result = apiDelete("/records/$tableName/$id");
+
+if ($result === false) {
+    header("Location: data_tabel.php?table=$tableName&status=gagal_hapus");
+    exit;
+}
+
+/* ===============================
+   Sukses
+================================ */
+header("Location: data_tabel.php?table=$tableName&status=sukses_hapus");
+exit;

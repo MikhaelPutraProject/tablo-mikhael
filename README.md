@@ -144,7 +144,3 @@ Ikuti langkah-langkah berikut untuk menjalankan website **Tablo Dashboard By Mik
 7. **Login**
    - **Username:** `user`
    - **Password:** `user123`
-
-### 📌 Catatan Instalasi
-- Pastikan konfigurasi koneksi database pada file PHP sudah sesuai
-- Website ini dibuat untuk **keperluan tugas akademik**, bukan penggunaan produksi

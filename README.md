@@ -96,3 +96,55 @@ POST /api.php/records/produk
 GET /api.php/records/produk
 PUT /api.php/records/produk/{id}
 DELETE /api.php/records/produk/{id}
+```
+
+## 🚀 Cara Pemasangan (Instalasi)
+
+Ikuti langkah-langkah berikut untuk menjalankan website **Tablo Dashboard By Mikhael** secara lokal menggunakan **XAMPP**.
+
+1. **Persiapan Server**
+   - Install **XAMPP**
+   - Jalankan **Apache** dan **MySQL**
+
+2. **Buat Database**
+   - Buka **phpMyAdmin**
+   - Buat database baru dengan nama:
+     ```
+     crud_db
+     ```
+
+3. **Import Database**
+   - Masuk ke database `crud_db`
+   - Pilih menu **Import**
+   - Import file database (`.sql`) yang tersedia pada project
+
+4. **Buat Folder Project**
+   - Masuk ke folder:
+     ```
+     xampp/htdocs/
+     ```
+   - Buat folder baru dengan nama:
+     ```
+     tablo
+     ```
+
+5. **Import File Project**
+   - Salin seluruh file project ke dalam folder:
+     ```
+     xampp/htdocs/tablo/
+     ```
+
+6. **Jalankan Website**
+   - Buka browser
+   - Akses alamat:
+     ```
+     http://localhost/tablo/
+     ```
+
+7. **Login**
+   - **Username:** `user`
+   - **Password:** `user123`
+
+### 📌 Catatan Instalasi
+- Pastikan konfigurasi koneksi database pada file PHP sudah sesuai
+- Website ini dibuat untuk **keperluan tugas akademik**, bukan penggunaan produksi

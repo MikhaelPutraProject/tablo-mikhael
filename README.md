@@ -1,6 +1,6 @@
 # 📊 Tablo Dashboard By Mikhael
 
-**Judul Website:** Tablo Dashboard By Mikhael  
+**Nama Website:** Tablo Dashboard By Mikhael  
 **Website:** https://tablobymikhael.ct.ws  
 
 **Deskripsi:**  

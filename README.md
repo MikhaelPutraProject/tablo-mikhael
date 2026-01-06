@@ -92,10 +92,10 @@ Pengelolaan data dilakukan menggunakan endpoint API berikut:
 
 ### Contoh endpoint API:
 ```http
-POST /api.php/records/produk
-GET /api.php/records/produk
-PUT /api.php/records/produk/{id}
-DELETE /api.php/records/produk/{id}
+POST   /api.php/records/produk        # Create (Tambah Data)
+GET    /api.php/records/produk        # Read (Lihat Data)
+PUT    /api.php/records/produk/{id}   # Update (Ubah Data)
+DELETE /api.php/records/produk/{id}   # Delete (Hapus Data)
 ```
 
 ## 🚀 Cara Pemasangan (Instalasi)

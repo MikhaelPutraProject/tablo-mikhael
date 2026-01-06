@@ -12776,11 +12776,20 @@ namespace Tqdev\PhpCrudApi {
 
     $config = new Config([
         // 'driver' => 'mysql',
+        'address'  => 'sql308.infinityfree.com',
+        // 'port' => '3306',
+        'username' => 'if0_40319321',
+        'password' => 'm1AFUzIjvDNWUo2',
+        'database' => 'if0_40319321_crud_db',
+        // 'debug' => false
+    ]);
+    $config = new Config([
+        // 'driver' => 'mysql',
         // 'address' => 'localhost',
         // 'port' => '3306',
         'username' => 'root',
         'password' => '',
-        'database' => 'tablo',
+        'database' => 'crud_db',
         // 'debug' => false
     ]);
     $request = RequestFactory::fromGlobals();
